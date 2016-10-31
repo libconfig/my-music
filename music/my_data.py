@@ -1,0 +1,4 @@
+class MyVKData():
+	LOGIN = '+79086627729'
+	PASS = 'J3EfGw3Cv3omoHhG'
+	APP_ID = 5685831

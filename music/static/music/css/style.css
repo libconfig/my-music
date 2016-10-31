@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body	{
+	font-family: 'Open Sans', sans-serif;
+	background: url(/static/music/images/back3.jpg) no-repeat fixed;
+	background-size: cover;
+}
+a:hover { text-decoration: none; }
+
+header {
+	width: 100%;
+	padding: 5px 0;
+	z-index: 1;
+	position: fixed;
+	background-color: rgba(255,255,255,.7);
+}
+header .container, header .row	{
+	margin: 0 auto;
+}
+header .logo	{
+	font-size: 28px;
+	text-align: left;
+}
+header .logo, header .form { 
+	height: 50px; 
+	line-height: 44px; 
+}
+header form	{
+}
+.cover_block	{
+	width: 100%;
+	height: 220px;
+	display: block;
+	top: 100px;
+}
+.cover_block img {
+	width: 100%;
+	height: auto;
+}
+
+.playNow {
+	color: rgba(255,255,255,.8);
+	font-size: 12px;
+	text-align: left;
+}
+.playNow span {
+	color:rgba(255,255,255,.5);
+}
+.playNow p {
+	padding: 0; margin-top:0;
+}
+
+ol { padding: 10px 0; margin: 0 0 150px 0; list-style:decimal-leading-zero inside; color: #ccc; background-color: #fff; }
+ol li { margin: 0px; padding: 0 10px; height: 32px; line-height: 30px; overflow:hidden; border-bottom: 1px solid rgba(153,153,153,0.1);cursor: pointer; color: #666; font-size: 14px;transition: background-color 0.5s;}
+ol li:hover, ol li.playing {background: #0d47a1; color: #fff  }
+ol li.playing, ol li.playing a { color: #fff }
+ol li:hover a {color: #fff}
+ol li a { color: #000;}
+ol li a i { color: #999; font-weight: normal; }
+
+#shortcuts { position: fixed; bottom: 0px; width: 100%; color: #666; font-size: 0.9em; margin: 60px 0px 0px; padding: 20px 20px 15px; background: #f3f3f3; background: rgba(240, 240, 240, 0.7); }
+#shortcuts div { width: 460px; margin: 0px auto; }
+#shortcuts h1 { margin: 0px 0px 6px; }
+#shortcuts p { margin: 0px 0px 18px; }
+#shortcuts em { font-style: normal; background: #d3d3d3; padding: 3px 9px; position: relative; left: -3px;
+-webkit-border-radius: 4px; -moz-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px;
+-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); }
+
+@media screen and (max-device-width: 480px) {
+#wrapper { position: relative; left: -3%; }
+#shortcuts { display: none; }
+}
+
+
+.audiojs audio { position: absolute; left: -1px; }
+.audiojs { width: 100%; height: 36px; background: none; overflow: hidden; font-family: monospace; font-size: 12px;}
+
+.audiojs .play-pause { width: 40px; height: 40px; padding: 4px 6px; margin: 0px; float: left; overflow: hidden; border-right: 1px solid #000; }
+.audiojs p { display: none; width: 25px; height: 40px; margin: 0px; cursor: pointer; }
+.audiojs .play { display: block; }
+.audiojs .scrubber { position: relative; float: left; width: 280px; background: #5a5a5a; height: 14px; margin: 10px; border-top: 1px solid #3f3f3f; border-left: 0px; border-bottom: 0px; overflow: hidden; }
+.audiojs .progress { position: absolute; top: 0px; left: 0px; height: 14px; width: 0px; background: #ccc; z-index: 1;
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ccc), color-stop(0.5, #ddd), color-stop(0.51, #ccc), color-stop(1, #ccc));
+background-image: -moz-linear-gradient(center top, #ccc 0%, #ddd 50%, #ccc 51%, #ccc 100%); }
+.audiojs .loaded { position: absolute; top: 0px; left: 0px; height: 14px; width: 0px; background: #000;
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #222), color-stop(0.5, #333), color-stop(0.51, #222), color-stop(1, #222));
+background-image: -moz-linear-gradient(center top, #222 0%, #333 50%, #222 51%, #222 100%); }
+.audiojs .time { float: left; height: 36px; line-height: 36px; margin: 0px 0px 0px 6px; padding: 0px 6px 0px 12px; border-left: 1px solid #000; color: #ddd; text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5); }
+.audiojs .time em { padding: 0px 2px 0px 0px; color: #f9f9f9; font-style: normal; }
+.audiojs .time strong { padding: 0px 0px 0px 2px; font-weight: normal; }
+.audiojs .error-message { float: left; display: none; margin: 0px 10px; height: 36px; width: 400px; overflow: hidden; line-height: 36px; white-space: nowrap; color: #fff;
+text-overflow: ellipsis; -o-text-overflow: ellipsis; -icab-text-overflow: ellipsis; -khtml-text-overflow: ellipsis; -moz-text-overflow: ellipsis; -webkit-text-overflow: ellipsis; }
+.audiojs .error-message a { color: #eee; text-decoration: none; padding-bottom: 1px; border-bottom: 1px solid #999; white-space: wrap; }
+.audiojs .play { background: url(/static/music/audiojs/audiojs/player-graphics.gif) -2px -1px no-repeat; }
+.audiojs .loading { background: url(/static/music/audiojs/audiojs/player-graphics.gif) -2px -31px no-repeat; }
+.audiojs .error { background: url(/static/music/audiojs/audiojs/player-graphics.gif) -2px -61px no-repeat; }
+.audiojs .pause { background: url(/static/music/audiojs/audiojs/player-graphics.gif) -2px -91px no-repeat; }
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (min-moz-device-pixel-ratio: 2), 
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2) {
+.audiojs .play, .audiojs .loading, .audiojs .error, .audiojs .pause {
+  background-image: url("$2");
+  -webkit-background-size: 30px 120px;
+  -moz-background-size: 30px 120px;
+  -o-background-size: 30px 120px;
+  background-size: 30px 120px; 
+} 
+} 
+
+.playing .play, .playing .loading, .playing .error { display: none; } 
+.playing .pause { display: block; } 
+
+.loading .play, .loading .pause, .loading .error { display: none; } 
+.loading .loading { display: block; } 
+
+.error .time, .error .play, .error .pause, .error .scrubber, .error .loading { display: none; }
+.error .error { display: block; } 
+.error .play-pause p { cursor: auto; } 
+.error .error-message { display: block;}
